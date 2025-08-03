@@ -74,16 +74,16 @@ public class MobileScannerPlugin: NSObject, FlutterPlugin, FlutterStreamHandler,
 
         let instance = MobileScannerPlugin(textures)
         let method = FlutterMethodChannel(name:
-                                            "uz.akmaljonabdirakhimov.mobile_scanner/scanner/method", binaryMessenger: messenger)
+                                            "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/method", binaryMessenger: messenger)
         let event = FlutterEventChannel(name:
-                                            "uz.akmaljonabdirakhimov.mobile_scanner/scanner/event", binaryMessenger: messenger)
+                                            "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/event", binaryMessenger: messenger)
 
         registrar.addMethodCallDelegate(instance, channel: method)
         event.setStreamHandler(instance)
         
 #if os(iOS)
         let orientationEvent = FlutterEventChannel(name:
-                                            "uz.akmaljonabdirakhimov.mobile_scanner/scanner/deviceOrientation", binaryMessenger: messenger)
+                                            "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/deviceOrientation", binaryMessenger: messenger)
         orientationEvent.setStreamHandler(DeviceOrientationStreamHandler(onOrientationChanged: instance.setDeviceOrientation))
 #endif
     }

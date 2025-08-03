@@ -72,7 +72,7 @@ MobileScanner(
 The package includes utility functions for credit card validation:
 
 ```dart
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 // Extract and validate card number
 final cardNumber = CreditCardUtils.extractCardNumber(text);
@@ -126,7 +126,7 @@ Add the dependency in your `pubspec.yaml` file:
 
 ```
 dependencies:
-  mobile_scanner: ^<latest_version>
+  awesome_mobile_scanner: ^<latest_version>
 ```
 
 Then run:
@@ -144,7 +144,7 @@ The alternative is to use the **unbundled version** of MLKit Barcode-scanning fo
 
 To use the **unbundled version** of the MLKit Barcode-scanning, add the following line to your `/android/gradle.properties` file:
 ```
-uz.akmaljonabdirakhimov.mobile_scanner.useUnbundled=true
+uz.akmaljonabdirakhimov.awesome_mobile_scanner.useUnbundled=true
 ```
 
 ### iOS
@@ -185,7 +185,7 @@ the source URL can be set beforehand.
 
 ```dart
 import 'package:flutter/foundation.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 final String scriptUrl = // ...
 
@@ -198,7 +198,7 @@ if (kIsWeb) {
 
 ### Simple
 
-Import the package with `package:mobile_scanner/mobile_scanner.dart`. The only required parameter is `onDetect`, which returns the scanned barcode or qr code.
+Import the package with `package:awesome_mobile_scanner/awesome_mobile_scanner.dart`. The only required parameter is `onDetect`, which returns the scanned barcode or qr code.
 
 ```dart
 MobileScanner(

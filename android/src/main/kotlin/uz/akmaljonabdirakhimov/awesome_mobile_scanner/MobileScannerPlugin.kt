@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimov.mobile_scanner
+package uz.akmaljonabdirakhimov.awesome_mobile_scanner
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware

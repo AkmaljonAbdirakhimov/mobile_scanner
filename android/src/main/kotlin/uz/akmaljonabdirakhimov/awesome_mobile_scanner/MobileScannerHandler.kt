@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimov.mobile_scanner
+package uz.akmaljonabdirakhimov.awesome_mobile_scanner
 
 import android.app.Activity
 import android.content.Context
@@ -12,9 +12,9 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ExperimentalLensFacing
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.BarcodeFormats
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.DetectionSpeed
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.MobileScannerErrorCodes
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.BarcodeFormats
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.DetectionSpeed
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.MobileScannerErrorCodes
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -111,13 +111,13 @@ class MobileScannerHandler(
 
     init {
         methodChannel = MethodChannel(binaryMessenger,
-            "uz.akmaljonabdirakhimov.mobile_scanner/scanner/method")
+            "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/method")
         methodChannel!!.setMethodCallHandler(this)
 
         val deviceOrientationListener = DeviceOrientationListener(activity)
 
         deviceOrientationChannel = EventChannel(binaryMessenger,
-            "uz.akmaljonabdirakhimov.mobile_scanner/scanner/deviceOrientation")
+            "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/deviceOrientation")
         deviceOrientationChannel!!.setStreamHandler(deviceOrientationListener)
 
         mobileScanner = MobileScanner(

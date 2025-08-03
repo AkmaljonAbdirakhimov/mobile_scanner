@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimov.mobile_scanner
+package uz.akmaljonabdirakhimov.awesome_mobile_scanner
 
 import android.app.Activity
 import android.content.Context
@@ -41,12 +41,12 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.DetectionSpeed
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.MobileScannerErrorCodes
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.MobileScannerStartParameters
-import uz.akmaljonabdirakhimov.mobile_scanner.utils.CreditCardExtractor
-import uz.akmaljonabdirakhimov.mobile_scanner.utils.YuvToRgbConverter
-import uz.akmaljonabdirakhimov.mobile_scanner.utils.serialize
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.DetectionSpeed
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.MobileScannerErrorCodes
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.MobileScannerStartParameters
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.utils.CreditCardExtractor
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.utils.YuvToRgbConverter
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.utils.serialize
 import io.flutter.view.TextureRegistry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

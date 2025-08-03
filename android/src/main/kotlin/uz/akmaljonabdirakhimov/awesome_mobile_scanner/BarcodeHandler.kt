@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimov.mobile_scanner
+package uz.akmaljonabdirakhimov.awesome_mobile_scanner
 
 import android.os.Handler
 import android.os.Looper
@@ -11,7 +11,7 @@ class BarcodeHandler(binaryMessenger: BinaryMessenger) : EventChannel.StreamHand
 
     private val eventChannel = EventChannel(
         binaryMessenger,
-        "uz.akmaljonabdirakhimov.mobile_scanner/scanner/event"
+        "uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/event"
     )
 
     init {

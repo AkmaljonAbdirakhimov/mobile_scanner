@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 An universal scanner for Flutter based on the Vision API.
                        DESC
-  s.homepage         = 'https://github.com/akmaljonabdirakhimov/mobile_scanner'
+  s.homepage         = 'https://github.com/akmaljonabdirakhimov/awesome_mobile_scanner'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Akmaljon Abdirakhimov' => 'akmaljonabdirakhimov@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'mobile_scanner/Sources/mobile_scanner/**/*.swift'
+  s.source_files = 'awesome_mobile_scanner/Sources/mobile_scanner/**/*.swift'
   s.ios.dependency 'Flutter'
   s.osx.dependency 'FlutterMacOS'
   s.ios.deployment_target = '12.0'
@@ -21,5 +21,5 @@ An universal scanner for Flutter based on the Vision API.
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
-  s.resource_bundles = {'awesome_mobile_scanner_privacy' => ['mobile_scanner/Sources/mobile_scanner/Resources/PrivacyInfo.xcprivacy']}
+  s.resource_bundles = {'awesome_mobile_scanner_privacy' => ['awesome_mobile_scanner/Sources/mobile_scanner/Resources/PrivacyInfo.xcprivacy']}
 end

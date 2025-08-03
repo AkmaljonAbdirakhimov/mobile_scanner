@@ -37,17 +37,17 @@ class MethodChannelMobileScanner extends MobileScannerPlatform {
 
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('uz.akmaljonabdirakhimov.mobile_scanner/scanner/method');
+  final methodChannel = const MethodChannel('uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/method');
 
   /// The event channel that sends back device orientation change events.
   @visibleForTesting
   final deviceOrientationEventChannel = const EventChannel(
-    'uz.akmaljonabdirakhimov.mobile_scanner/scanner/deviceOrientation',
+    'uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/deviceOrientation',
   );
 
   /// The event channel that sends back scanned barcode events.
   @visibleForTesting
-  final eventChannel = const EventChannel('uz.akmaljonabdirakhimov.mobile_scanner/scanner/event');
+  final eventChannel = const EventChannel('uz.akmaljonabdirakhimov.awesome_mobile_scanner/scanner/event');
 
   Stream<DeviceOrientation>? _deviceOrientationStream;
   Stream<Map<Object?, Object?>>? _eventsStream;

@@ -1,11 +1,11 @@
-package uz.akmaljonabdirakhimov.mobile_scanner
+package uz.akmaljonabdirakhimov.awesome_mobile_scanner
 
 import android.Manifest.permission
 import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import uz.akmaljonabdirakhimov.mobile_scanner.objects.MobileScannerErrorCodes
+import uz.akmaljonabdirakhimov.awesome_mobile_scanner.objects.MobileScannerErrorCodes
 import io.flutter.plugin.common.PluginRegistry.RequestPermissionsResultListener
 
 /**
