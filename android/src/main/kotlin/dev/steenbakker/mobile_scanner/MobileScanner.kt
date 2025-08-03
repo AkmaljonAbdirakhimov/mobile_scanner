@@ -230,6 +230,7 @@ class MobileScanner(
                             mobileScannerCallback(
                                 emptyList(), // Empty barcode list
                                 creditCardMap,
+                                null, // No image bytes when returnImage is false
                                 if (portrait) inputImage.width else inputImage.height,
                                 if (portrait) inputImage.height else inputImage.width
                             )
@@ -254,6 +255,7 @@ class MobileScanner(
                             mobileScannerCallback(
                                 emptyList(), // Empty barcode list
                                 creditCardMap,
+                                byteArray, // Image bytes when returnImage is true
                                 bmWidth,
                                 bmHeight
                             )
@@ -449,7 +451,7 @@ class MobileScanner(
         scanner = barcodeScannerFactory(barcodeScannerOptions)
         
         // Initialize text recognizer for credit card detection
-        if (detectionType == "creditCard") {
+        if (this.detectionType == "creditCard") {
             textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         }
 

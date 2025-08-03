@@ -300,10 +300,10 @@ class MobileScannerHandler(
         analyzerResult = result
 
         mobileScanner!!.analyzeImage(
-            filePath,
+            Uri.parse(filePath),
             barcodeScannerOptions,
-            analyzerSuccessCallback,
-            analyzerErrorCallback
+            analyzeImageSuccessCallback,
+            analyzeImageErrorCallback
         )
     }
 
@@ -316,8 +316,8 @@ class MobileScannerHandler(
         mobileScanner!!.analyzeImageForCreditCards(
             filePath,
             confidenceThreshold,
-            analyzerSuccessCallback,
-            analyzerErrorCallback
+            analyzeImageSuccessCallback,
+            analyzeImageErrorCallback
         )
     }
 

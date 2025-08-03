@@ -25,7 +25,11 @@ object CreditCardExtractor {
         for (block in text.textBlocks) {
             for (line in block.lines) {
                 val lineText = line.text
-                val lineConfidence = line.confidence ?: 0.0
+                val lineConfidence: Double = try {
+                    line.confidence?.toString()?.toDoubleOrNull() ?: 0.0
+                } catch (e: Exception) {
+                    0.0
+                }
                 
                 // Skip lines with low confidence
                 if (lineConfidence < confidenceThreshold) continue

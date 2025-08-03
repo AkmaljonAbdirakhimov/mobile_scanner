@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Example screen demonstrating credit card scanning functionality.
+///
+/// This example shows how to scan credit cards WITHOUT the visual overlay.
+/// The credit card detection still works, but no visual shapes are drawn on the screen.
 class CreditCardScannerExample extends StatefulWidget {
   /// Constructor for credit card scanner example.
   const CreditCardScannerExample({super.key});
@@ -74,14 +77,14 @@ class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
       body: Stack(
         children: [
           MobileScanner(controller: controller, onCreditCardDetect: _handleCreditCard, fit: BoxFit.cover),
-          // Credit card overlay
-          if (controller != null)
-            CreditCardOverlay(
-              controller: controller!,
-              boxFit: BoxFit.cover,
-              color: Colors.blue.withOpacity(0.3),
-              strokeWidth: 3.0,
-            ),
+          // Credit card overlay - REMOVED
+          // if (controller != null)
+          //   CreditCardOverlay(
+          //     controller: controller!,
+          //     boxFit: BoxFit.cover,
+          //     color: Colors.blue.withOpacity(0.3),
+          //     strokeWidth: 3.0,
+          //   ),
           // Info panel at bottom
           Align(
             alignment: Alignment.bottomCenter,
