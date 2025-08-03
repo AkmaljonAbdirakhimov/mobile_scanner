@@ -1,4 +1,4 @@
-package dev.steenbakker.mobile_scanner
+package uz.akmaljonabdirakhimovmobile_scanner
 
 import android.graphics.ImageFormat
 import android.graphics.Point

@@ -1,7 +1,7 @@
-package dev.steenbakker.mobile_scanner
+package uz.akmaljonabdirakhimovmobile_scanner
 
 import android.content.pm.PackageManager
-import dev.steenbakker.mobile_scanner.objects.MobileScannerErrorCodes
+import uz.akmaljonabdirakhimovmobile_scanner.objects.MobileScannerErrorCodes
 import io.flutter.plugin.common.PluginRegistry
 
 /**

@@ -1,4 +1,4 @@
-package dev.steenbakker.mobile_scanner
+package uz.akmaljonabdirakhimovmobile_scanner
 
 import android.app.Activity
 import android.content.Context
@@ -41,12 +41,12 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
-import dev.steenbakker.mobile_scanner.objects.DetectionSpeed
-import dev.steenbakker.mobile_scanner.objects.MobileScannerErrorCodes
-import dev.steenbakker.mobile_scanner.objects.MobileScannerStartParameters
-import dev.steenbakker.mobile_scanner.utils.CreditCardExtractor
-import dev.steenbakker.mobile_scanner.utils.YuvToRgbConverter
-import dev.steenbakker.mobile_scanner.utils.serialize
+import uz.akmaljonabdirakhimovmobile_scanner.objects.DetectionSpeed
+import uz.akmaljonabdirakhimovmobile_scanner.objects.MobileScannerErrorCodes
+import uz.akmaljonabdirakhimovmobile_scanner.objects.MobileScannerStartParameters
+import uz.akmaljonabdirakhimovmobile_scanner.utils.CreditCardExtractor
+import uz.akmaljonabdirakhimovmobile_scanner.utils.YuvToRgbConverter
+import uz.akmaljonabdirakhimovmobile_scanner.utils.serialize
 import io.flutter.view.TextureRegistry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

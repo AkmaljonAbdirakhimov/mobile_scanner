@@ -1,7 +1,7 @@
-package dev.steenbakker.mobile_scanner.utils
+package uz.akmaljonabdirakhimovmobile_scanner.utils
 
 import com.google.mlkit.vision.text.Text
-import dev.steenbakker.mobile_scanner.objects.CreditCard
+import uz.akmaljonabdirakhimovmobile_scanner.objects.CreditCard
 import kotlin.math.max
 import kotlin.math.min
 

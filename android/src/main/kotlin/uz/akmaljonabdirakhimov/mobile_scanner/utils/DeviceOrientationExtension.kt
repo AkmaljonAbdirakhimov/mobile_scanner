@@ -1,4 +1,4 @@
-package dev.steenbakker.mobile_scanner.utils
+package uz.akmaljonabdirakhimovmobile_scanner.utils
 
 import io.flutter.embedding.engine.systemchannels.PlatformChannel
 

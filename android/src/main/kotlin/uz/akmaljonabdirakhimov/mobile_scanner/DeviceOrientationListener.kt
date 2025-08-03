@@ -1,4 +1,4 @@
-package dev.steenbakker.mobile_scanner
+package uz.akmaljonabdirakhimovmobile_scanner
 
 import android.app.Activity
 import android.content.BroadcastReceiver
@@ -12,7 +12,7 @@ import android.os.Looper
 import android.view.Display
 import android.view.Surface
 import android.view.WindowManager
-import dev.steenbakker.mobile_scanner.utils.serialize
+import uz.akmaljonabdirakhimovmobile_scanner.utils.serialize
 import io.flutter.embedding.engine.systemchannels.PlatformChannel
 import io.flutter.plugin.common.EventChannel
 

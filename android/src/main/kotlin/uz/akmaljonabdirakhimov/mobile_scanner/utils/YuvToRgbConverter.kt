@@ -1,6 +1,6 @@
 
 
-package dev.steenbakker.mobile_scanner.utils
+package uz.akmaljonabdirakhimovmobile_scanner.utils
 
 import android.content.Context
 import android.graphics.Bitmap

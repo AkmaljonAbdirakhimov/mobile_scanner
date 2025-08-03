@@ -144,7 +144,7 @@ The alternative is to use the **unbundled version** of MLKit Barcode-scanning fo
 
 To use the **unbundled version** of the MLKit Barcode-scanning, add the following line to your `/android/gradle.properties` file:
 ```
-dev.steenbakker.mobile_scanner.useUnbundled=true
+uz.akmaljonabdirakhimovmobile_scanner.useUnbundled=true
 ```
 
 ### iOS

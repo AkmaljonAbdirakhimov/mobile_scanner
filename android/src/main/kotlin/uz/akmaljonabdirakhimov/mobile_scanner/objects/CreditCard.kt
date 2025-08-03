@@ -1,4 +1,4 @@
-package dev.steenbakker.mobile_scanner.objects
+package uz.akmaljonabdirakhimovmobile_scanner.objects
 
 /**
  * Represents a detected credit card with extracted information.
