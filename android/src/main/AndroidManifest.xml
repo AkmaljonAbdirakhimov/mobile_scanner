@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="uz.akmaljonabdirakhimovmobile_scanner">
+  package="uz.akmaljonabdirakhimov.mobile_scanner">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />

@@ -1,7 +1,7 @@
-package uz.akmaljonabdirakhimovmobile_scanner.utils
+package uz.akmaljonabdirakhimov.mobile_scanner.utils
 
 import com.google.mlkit.vision.text.Text
-import uz.akmaljonabdirakhimovmobile_scanner.objects.CreditCard
+import uz.akmaljonabdirakhimov.mobile_scanner.objects.CreditCard
 import kotlin.math.max
 import kotlin.math.min
 

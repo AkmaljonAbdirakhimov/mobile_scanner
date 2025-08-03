@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimovmobile_scanner
+package uz.akmaljonabdirakhimov.mobile_scanner
 
 class NoCamera : Exception()
 class AlreadyStarted : Exception()

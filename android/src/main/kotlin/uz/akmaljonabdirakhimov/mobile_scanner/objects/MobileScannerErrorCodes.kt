@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimovmobile_scanner.objects
+package uz.akmaljonabdirakhimov.mobile_scanner.objects
 
 class MobileScannerErrorCodes {
     companion object {

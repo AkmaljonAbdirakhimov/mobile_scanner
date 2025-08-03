@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimovmobile_scanner_example
+package uz.akmaljonabdirakhimov.mobile_scanner_example
 
 import io.flutter.embedding.android.FlutterActivity
 

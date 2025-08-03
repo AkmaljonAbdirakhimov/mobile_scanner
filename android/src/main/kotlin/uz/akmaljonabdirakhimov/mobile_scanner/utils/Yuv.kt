@@ -1,4 +1,4 @@
-package uz.akmaljonabdirakhimovmobile_scanner.utils
+package uz.akmaljonabdirakhimov.mobile_scanner.utils
 
 import android.graphics.ImageFormat
 import android.media.Image

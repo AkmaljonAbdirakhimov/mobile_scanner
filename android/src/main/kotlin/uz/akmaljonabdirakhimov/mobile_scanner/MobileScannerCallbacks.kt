@@ -1,6 +1,6 @@
-package uz.akmaljonabdirakhimovmobile_scanner
+package uz.akmaljonabdirakhimov.mobile_scanner
 
-import uz.akmaljonabdirakhimovmobile_scanner.objects.MobileScannerStartParameters
+import uz.akmaljonabdirakhimov.mobile_scanner.objects.MobileScannerStartParameters
 
 typealias MobileScannerCallback = (barcodes: List<Map<String, Any?>>, creditCards: List<Map<String, Any?>>, image: ByteArray?, width: Int?, height: Int?) -> Unit
 typealias AnalyzerErrorCallback = (message: String) -> Unit
