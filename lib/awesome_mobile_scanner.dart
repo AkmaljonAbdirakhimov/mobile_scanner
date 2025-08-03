@@ -38,4 +38,5 @@ export 'src/overlay/credit_card_overlay.dart';
 export 'src/overlay/credit_card_painter.dart';
 export 'src/overlay/scan_window_overlay.dart';
 export 'src/overlay/scan_window_painter.dart';
+export 'src/screens/credit_card_scanner_screen.dart';
 export 'src/utils/credit_card_utils.dart';

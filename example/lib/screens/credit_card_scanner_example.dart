@@ -1,10 +1,7 @@
 import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 import 'package:flutter/material.dart';
 
-/// Example screen demonstrating credit card scanning functionality.
-///
-/// This example shows how to scan credit cards WITHOUT the visual overlay.
-/// The credit card detection still works, but no visual shapes are drawn on the screen.
+/// Example screen demonstrating credit card scanning functionality using the new CreditCardScannerScreen.
 class CreditCardScannerExample extends StatefulWidget {
   /// Constructor for credit card scanner example.
   const CreditCardScannerExample({super.key});
@@ -14,50 +11,30 @@ class CreditCardScannerExample extends StatefulWidget {
 }
 
 class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
-  MobileScannerController? controller;
-  CreditCard? _creditCard;
+  String? _scannedCardNumber;
 
-  @override
-  void initState() {
-    super.initState();
-    controller = MobileScannerController(detectionType: DetectionType.creditCard);
-  }
+  void _onCardDetected(String cardNumber) {
+    setState(() {
+      _scannedCardNumber = cardNumber;
+    });
 
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
-  }
-
-  void _handleCreditCard(CreditCardCapture capture) {
-    if (mounted && capture.creditCards.isNotEmpty) {
-      setState(() {
-        _creditCard = capture.creditCards.first;
-      });
-    }
-  }
-
-  Widget _creditCardPreview(CreditCard? card) {
-    if (card == null) {
-      return const Text('Scan a credit card!', overflow: TextOverflow.fade, style: TextStyle(color: Colors.white));
-    }
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (card.maskedCardNumber != null)
-          Text('Card: ${card.maskedCardNumber}', style: const TextStyle(color: Colors.white, fontSize: 16)),
-        if (card.cardNumber != null)
-          Text('Card: ${card.cardNumber}', style: const TextStyle(color: Colors.white, fontSize: 16)),
-        if (card.expiryDate != null)
-          Text('Expiry: ${card.expiryDate}', style: const TextStyle(color: Colors.white, fontSize: 14)),
-        if (card.cardholderName != null)
-          Text('Name: ${card.cardholderName}', style: const TextStyle(color: Colors.white, fontSize: 14)),
-        Text(
-          'Confidence: ${(card.confidence * 100).toStringAsFixed(1)}%',
-          style: const TextStyle(color: Colors.white, fontSize: 12),
-        ),
-      ],
+    // Show a dialog with the scanned card number
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Card Detected!'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Card Number: $cardNumber'),
+                const SizedBox(height: 16),
+                const Text('This is an example of how to use the CreditCardScannerScreen.'),
+              ],
+            ),
+            actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('OK'))],
+          ),
     );
   }
 
@@ -65,42 +42,95 @@ class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Credit Card Scanner'),
+        title: const Text('Credit Card Scanner Example'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
-      backgroundColor: Colors.black,
-      body: Stack(
+      body: Column(
         children: [
-          MobileScanner(controller: controller, onCreditCardDetect: _handleCreditCard),
-          // Credit card overlay - REMOVED
-          // if (controller != null)
-          //   CreditCardOverlay(
-          //     controller: controller!,
-          //     boxFit: BoxFit.cover,
-          //     color: Colors.blue.withOpacity(0.3),
-          //     strokeWidth: 3.0,
-          //   ),
-          // Info panel at bottom
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              height: 120,
-              color: const Color.fromRGBO(0, 0, 0, 0.7),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _creditCardPreview(_creditCard),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Position a credit card in the frame',
-                      style: TextStyle(color: Colors.white70, fontSize: 12),
+          // Display previously scanned card
+          if (_scannedCardNumber != null)
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.green.shade200),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Last Scanned Card:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                  const SizedBox(height: 8),
+                  Text(_scannedCardNumber!, style: const TextStyle(fontSize: 18, fontFamily: 'monospace')),
+                ],
+              ),
+            ),
+
+          // Instructions
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            decoration: BoxDecoration(
+              color: Colors.blue.shade50,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.blue.shade200),
+            ),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('How to use:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                SizedBox(height: 8),
+                Text('1. Tap the "Scan Credit Card" button below'),
+                Text('2. Position a credit card in the scanning area'),
+                Text('3. The app will automatically detect and format the card number'),
+                Text('4. The scanner will close automatically when a card is detected'),
+              ],
+            ),
+          ),
+
+          const Spacer(),
+
+          // Scan button
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder:
+                          (context) => CreditCardScannerScreen(
+                            onCardDetected: _onCardDetected,
+                            appBar: AppBar(
+                              title: const Text('Scan Credit Card'),
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.white,
+                              elevation: 0,
+                            ),
+                            backgroundColor: Colors.black,
+                            overlayColor: Colors.black.withValues(alpha: 0.3),
+                            borderColor: Colors.white,
+                            scanAreaWidth: MediaQuery.of(context).size.width * 0.85,
+                            scanAreaHeight: MediaQuery.of(context).size.height * 0.30,
+                            borderWidth: 2.0,
+                            borderRadius: 12.0,
+                            confidenceThreshold: 0.7,
+                          ),
                     ),
-                  ],
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
+                child: const Text('Scan Credit Card', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ),
             ),
           ),
