@@ -1,19 +1,13 @@
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// This function finds the barcode that touches the center of the
 /// image. If no barcode is found that touches the center, null is returned.
 /// See `_BarcodeScannerPicklistState` and the returnImage option for more info.
 ///
 /// https://github.com/juliansteenbakker/mobile_scanner/issues/1183
-Barcode? findBarcodeAtCenter(
-  BarcodeCapture barcodeCapture,
-  DeviceOrientation orientation,
-) {
-  final Size imageSize = _fixPortraitLandscape(
-    barcodeCapture.size,
-    orientation,
-  );
+Barcode? findBarcodeAtCenter(BarcodeCapture barcodeCapture, DeviceOrientation orientation) {
+  final Size imageSize = _fixPortraitLandscape(barcodeCapture.size, orientation);
   for (final Barcode barcode in barcodeCapture.barcodes) {
     final List<Offset> corners = _fixCorners(barcode.corners);
     if (_isPolygonTouchingTheCenter(imageSize: imageSize, polygon: corners)) {
@@ -25,14 +19,8 @@ Barcode? findBarcodeAtCenter(
 
 /// Check if the polygon, represented by a list of offsets, touches the center
 /// of an image when the size of the image is given.
-bool _isPolygonTouchingTheCenter({
-  required Size imageSize,
-  required List<Offset> polygon,
-}) {
-  final centerOfCameraOutput = Offset(
-    imageSize.width / 2,
-    imageSize.height / 2,
-  );
+bool _isPolygonTouchingTheCenter({required Size imageSize, required List<Offset> polygon}) {
+  final centerOfCameraOutput = Offset(imageSize.width / 2, imageSize.height / 2);
   return _isPointInPolygon(point: centerOfCameraOutput, polygon: polygon);
 }
 
@@ -51,9 +39,7 @@ bool _isPolygonTouchingTheCenter({
 bool _isPointInPolygon({required Offset point, required List<Offset> polygon}) {
   // Initial variables:
   int i; // Loop variable for current vertex
-  int j =
-      polygon.length -
-      1; // Last vertex index, initialized to the last vertex of the polygon
+  int j = polygon.length - 1; // Last vertex index, initialized to the last vertex of the polygon
   var inside = false; // Boolean flag initialized to false
 
   // Loop through each edge of the polygon

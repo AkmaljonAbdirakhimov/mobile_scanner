@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mobile_scanner/src/overlay/barcode_painter.dart';
+import 'package:awesome_mobile_scanner/src/overlay/barcode_painter.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockCanvas extends Mock implements Canvas {}

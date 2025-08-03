@@ -1,10 +1,10 @@
-/// @docImport 'package:mobile_scanner/src/mobile_scanner_controller.dart';
+/// @docImport 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 library;
 
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:mobile_scanner/src/objects/barcode.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode.dart';
 
 /// This class represents a scanned barcode.
 class BarcodeCapture {

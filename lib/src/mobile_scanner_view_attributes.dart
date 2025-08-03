@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
-import 'package:mobile_scanner/src/enums/torch_state.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/torch_state.dart';
 
 /// This class defines the attributes for the mobile scanner view.
 class MobileScannerViewAttributes {

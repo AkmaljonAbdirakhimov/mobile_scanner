@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
-import 'package:mobile_scanner/src/enums/mobile_scanner_error_code.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
-import 'package:mobile_scanner/src/utils/parse_device_orientation_extension.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/mobile_scanner_error_code.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/utils/parse_device_orientation_extension.dart';
 
 /// This class will manage the orientation corrections for textures
 /// that are provided by the SurfaceProducer API on Android.
@@ -19,17 +19,13 @@ class AndroidSurfaceProducerDelegate {
   /// from the given [config] and [cameraDirection].
   ///
   /// Throws a [MobileScannerException] if the configuration is invalid.
-  factory AndroidSurfaceProducerDelegate.fromConfiguration(
-    Map<String, Object?> config,
-    CameraFacing cameraDirection,
-  ) {
+  factory AndroidSurfaceProducerDelegate.fromConfiguration(Map<String, Object?> config, CameraFacing cameraDirection) {
     if (config case {
       'handlesCropAndRotation': final bool handlesCropAndRotation,
       'naturalDeviceOrientation': final String naturalDeviceOrientation,
       'sensorOrientation': final int sensorOrientation,
     }) {
-      final DeviceOrientation naturalOrientation =
-          naturalDeviceOrientation.parseDeviceOrientation();
+      final DeviceOrientation naturalOrientation = naturalDeviceOrientation.parseDeviceOrientation();
 
       return AndroidSurfaceProducerDelegate(
         cameraFacingDirection: cameraDirection,
@@ -41,9 +37,7 @@ class AndroidSurfaceProducerDelegate {
 
     throw const MobileScannerException(
       errorCode: MobileScannerErrorCode.genericError,
-      errorDetails: MobileScannerErrorDetails(
-        message: 'The start method did not return a valid configuration.',
-      ),
+      errorDetails: MobileScannerErrorDetails(message: 'The start method did not return a valid configuration.'),
     );
   }
 

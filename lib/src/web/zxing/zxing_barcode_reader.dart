@@ -3,16 +3,16 @@ import 'dart:js_interop';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-import 'package:mobile_scanner/src/enums/barcode_format.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
-import 'package:mobile_scanner/src/objects/barcode_capture.dart';
-import 'package:mobile_scanner/src/objects/start_options.dart';
-import 'package:mobile_scanner/src/web/barcode_reader.dart';
-import 'package:mobile_scanner/src/web/javascript_map.dart';
-import 'package:mobile_scanner/src/web/media_track_constraints_delegate.dart';
-import 'package:mobile_scanner/src/web/zxing/result.dart';
-import 'package:mobile_scanner/src/web/zxing/zxing_browser_multi_format_reader.dart';
-import 'package:mobile_scanner/src/web/zxing/zxing_exception.dart';
+import 'package:awesome_mobile_scanner/src/enums/barcode_format.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode_capture.dart';
+import 'package:awesome_mobile_scanner/src/objects/start_options.dart';
+import 'package:awesome_mobile_scanner/src/web/barcode_reader.dart';
+import 'package:awesome_mobile_scanner/src/web/javascript_map.dart';
+import 'package:awesome_mobile_scanner/src/web/media_track_constraints_delegate.dart';
+import 'package:awesome_mobile_scanner/src/web/zxing/result.dart';
+import 'package:awesome_mobile_scanner/src/web/zxing/zxing_browser_multi_format_reader.dart';
+import 'package:awesome_mobile_scanner/src/web/zxing/zxing_exception.dart';
 import 'package:web/web.dart' as web;
 
 /// A barcode reader implementation that uses the ZXing library.

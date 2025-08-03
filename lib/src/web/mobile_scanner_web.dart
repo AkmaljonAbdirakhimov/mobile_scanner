@@ -2,22 +2,22 @@ import 'dart:async';
 import 'dart:js_interop';
 import 'dart:ui_web' as ui_web;
 
+import 'package:awesome_mobile_scanner/src/enums/barcode_format.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/mobile_scanner_error_code.dart';
+import 'package:awesome_mobile_scanner/src/enums/torch_state.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_platform_interface.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_view_attributes.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode_capture.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card_capture.dart';
+import 'package:awesome_mobile_scanner/src/objects/start_options.dart';
+import 'package:awesome_mobile_scanner/src/web/barcode_reader.dart';
+import 'package:awesome_mobile_scanner/src/web/media_track_constraints_delegate.dart';
+import 'package:awesome_mobile_scanner/src/web/media_track_extension.dart';
+import 'package:awesome_mobile_scanner/src/web/zxing/zxing_barcode_reader.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:mobile_scanner/src/enums/barcode_format.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
-import 'package:mobile_scanner/src/enums/mobile_scanner_error_code.dart';
-import 'package:mobile_scanner/src/enums/torch_state.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
-import 'package:mobile_scanner/src/mobile_scanner_platform_interface.dart';
-import 'package:mobile_scanner/src/mobile_scanner_view_attributes.dart';
-import 'package:mobile_scanner/src/objects/barcode_capture.dart';
-import 'package:mobile_scanner/src/objects/credit_card_capture.dart';
-import 'package:mobile_scanner/src/objects/start_options.dart';
-import 'package:mobile_scanner/src/web/barcode_reader.dart';
-import 'package:mobile_scanner/src/web/media_track_constraints_delegate.dart';
-import 'package:mobile_scanner/src/web/media_track_extension.dart';
-import 'package:mobile_scanner/src/web/zxing/zxing_barcode_reader.dart';
 import 'package:web/web.dart';
 
 /// A web implementation of the MobileScannerPlatform of the MobileScanner
@@ -40,9 +40,6 @@ class MobileScannerWeb extends MobileScannerPlatform {
 
   /// The subscription for the barcode stream.
   StreamSubscription<Object?>? _barcodesSubscription;
-
-  /// The subscription for the credit card stream.
-  StreamSubscription<Object?>? _creditCardsSubscription;
 
   /// The container div element for the camera view.
   late HTMLDivElement _divElement;

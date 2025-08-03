@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 /// This widget represents an overlay that paints the bounding boxes of detected
 /// barcodes.
@@ -34,10 +34,7 @@ class BarcodeOverlay extends StatefulWidget {
 }
 
 class _BarcodeOverlayState extends State<BarcodeOverlay> {
-  final _textPainter = TextPainter(
-    textAlign: TextAlign.center,
-    textDirection: TextDirection.ltr,
-  );
+  final _textPainter = TextPainter(textAlign: TextAlign.center, textDirection: TextDirection.ltr);
 
   @override
   void dispose() {
@@ -61,9 +58,7 @@ class _BarcodeOverlayState extends State<BarcodeOverlay> {
             final BarcodeCapture? barcodeCapture = snapshot.data;
 
             // No barcode or preview size.
-            if (barcodeCapture == null ||
-                barcodeCapture.size.isEmpty ||
-                barcodeCapture.barcodes.isEmpty) {
+            if (barcodeCapture == null || barcodeCapture.size.isEmpty || barcodeCapture.barcodes.isEmpty) {
               return const SizedBox();
             }
 

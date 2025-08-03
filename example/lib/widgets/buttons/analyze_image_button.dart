@@ -1,7 +1,8 @@
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode_capture.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Button widget for analyze image function
 class AnalyzeImageButton extends StatelessWidget {
@@ -14,10 +15,7 @@ class AnalyzeImageButton extends StatelessWidget {
   Future<void> _onPressed(BuildContext context) async {
     if (kIsWeb) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Analyze image is not supported on web'),
-          backgroundColor: Colors.red,
-        ),
+        const SnackBar(content: Text('Analyze image is not supported on web'), backgroundColor: Colors.red),
       );
       return;
     }
@@ -37,14 +35,8 @@ class AnalyzeImageButton extends StatelessWidget {
 
     final snackBar =
         barcodes != null && barcodes.barcodes.isNotEmpty
-            ? const SnackBar(
-              content: Text('Barcode found!'),
-              backgroundColor: Colors.green,
-            )
-            : const SnackBar(
-              content: Text('No barcode found!'),
-              backgroundColor: Colors.red,
-            );
+            ? const SnackBar(content: Text('Barcode found!'), backgroundColor: Colors.green)
+            : const SnackBar(content: Text('No barcode found!'), backgroundColor: Colors.red);
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }

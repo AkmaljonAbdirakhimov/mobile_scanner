@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 /// A dialog widget that allows users to select a detection speed for the
 /// scanner.

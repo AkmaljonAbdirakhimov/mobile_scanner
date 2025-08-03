@@ -1,5 +1,6 @@
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Button widget for switch camera function
 class SwitchCameraButton extends StatelessWidget {
@@ -39,12 +40,7 @@ class SwitchCameraButton extends StatelessWidget {
             icon = const Icon(Icons.device_unknown);
         }
 
-        return IconButton(
-          color: Colors.white,
-          iconSize: 32,
-          icon: icon,
-          onPressed: _onPressed,
-        );
+        return IconButton(color: Colors.white, iconSize: 32, icon: icon, onPressed: _onPressed);
       },
     );
   }

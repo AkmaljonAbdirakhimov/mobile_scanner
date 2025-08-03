@@ -1,5 +1,6 @@
+import 'package:awesome_mobile_scanner/src/enums/torch_state.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Button widget for toggle torch (flash) function
 class ToggleFlashlightButton extends StatelessWidget {
@@ -43,10 +44,7 @@ class ToggleFlashlightButton extends StatelessWidget {
               onPressed: _onPressed,
             );
           case TorchState.unavailable:
-            return const SizedBox.square(
-              dimension: 48,
-              child: Icon(Icons.no_flash, size: 32, color: Colors.grey),
-            );
+            return const SizedBox.square(dimension: 48, child: Icon(Icons.no_flash, size: 32, color: Colors.grey));
         }
       },
     );

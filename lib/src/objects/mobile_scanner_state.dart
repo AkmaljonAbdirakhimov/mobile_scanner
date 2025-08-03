@@ -1,11 +1,11 @@
-/// @docImport 'package:mobile_scanner/src/mobile_scanner_controller.dart';
+/// @docImport 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 library;
 
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
-import 'package:mobile_scanner/src/enums/mobile_scanner_error_code.dart';
-import 'package:mobile_scanner/src/enums/torch_state.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/mobile_scanner_error_code.dart';
+import 'package:awesome_mobile_scanner/src/enums/torch_state.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
 
 /// This class represents the current state of a [MobileScannerController].
 class MobileScannerState {

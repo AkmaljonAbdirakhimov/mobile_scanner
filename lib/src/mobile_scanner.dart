@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/src/method_channel/mobile_scanner_method_channel.dart';
-import 'package:mobile_scanner/src/mobile_scanner_controller.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
-import 'package:mobile_scanner/src/mobile_scanner_platform_interface.dart';
-import 'package:mobile_scanner/src/mobile_scanner_preview.dart';
-import 'package:mobile_scanner/src/objects/barcode_capture.dart';
-import 'package:mobile_scanner/src/objects/credit_card.dart';
-import 'package:mobile_scanner/src/objects/credit_card_capture.dart';
-import 'package:mobile_scanner/src/objects/mobile_scanner_state.dart';
-import 'package:mobile_scanner/src/objects/scanner_error_widget.dart';
-import 'package:mobile_scanner/src/scan_window_calculation.dart';
+import 'package:awesome_mobile_scanner/src/method_channel/mobile_scanner_method_channel.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_platform_interface.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_preview.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode_capture.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card_capture.dart';
+import 'package:awesome_mobile_scanner/src/objects/mobile_scanner_state.dart';
+import 'package:awesome_mobile_scanner/src/objects/scanner_error_widget.dart';
+import 'package:awesome_mobile_scanner/src/scan_window_calculation.dart';
 
 /// This widget displays a live camera preview for the barcode scanner.
 class MobileScanner extends StatefulWidget {

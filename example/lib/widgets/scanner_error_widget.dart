@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 /// Button widget for analyze image function
 class ScannerErrorWidget extends StatelessWidget {

@@ -1,10 +1,10 @@
-/// @docImport 'package:mobile_scanner/src/mobile_scanner.dart';
+/// @docImport 'package:awesome_mobile_scanner/src/mobile_scanner.dart';
 library;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/src/enums/mobile_scanner_error_code.dart';
-import 'package:mobile_scanner/src/mobile_scanner_exception.dart';
+import 'package:awesome_mobile_scanner/src/enums/mobile_scanner_error_code.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_exception.dart';
 
 /// This widget represents the default error widget for the [MobileScanner]
 /// widget.

@@ -2,10 +2,10 @@ import 'dart:js_interop';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:mobile_scanner/src/enums/barcode_format.dart';
-import 'package:mobile_scanner/src/enums/barcode_type.dart';
-import 'package:mobile_scanner/src/objects/barcode.dart';
-import 'package:mobile_scanner/src/web/zxing/result_point.dart';
+import 'package:awesome_mobile_scanner/src/enums/barcode_format.dart';
+import 'package:awesome_mobile_scanner/src/enums/barcode_type.dart';
+import 'package:awesome_mobile_scanner/src/objects/barcode.dart';
+import 'package:awesome_mobile_scanner/src/web/zxing/result_point.dart';
 
 /// The JS static interop class for the Result class in the ZXing library.
 ///

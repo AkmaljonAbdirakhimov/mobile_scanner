@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 
 /// This widget represents an overlay that paints the bounding boxes of detected
 /// credit cards.

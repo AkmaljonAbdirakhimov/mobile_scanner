@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:js_interop';
 import 'dart:ui';
 
-import 'package:mobile_scanner/src/objects/credit_card.dart';
-import 'package:mobile_scanner/src/objects/credit_card_capture.dart';
-import 'package:mobile_scanner/src/utils/credit_card_utils.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card_capture.dart';
+import 'package:awesome_mobile_scanner/src/utils/credit_card_utils.dart';
 import 'package:web/web.dart';
 
 /// A web implementation of credit card detection using Tesseract.js

@@ -1,22 +1,22 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
+import 'package:awesome_mobile_scanner_example/widgets/buttons/analyze_image_button.dart';
+import 'package:awesome_mobile_scanner_example/widgets/buttons/pause_button.dart';
+import 'package:awesome_mobile_scanner_example/widgets/buttons/start_stop_button.dart';
+import 'package:awesome_mobile_scanner_example/widgets/buttons/switch_camera_button.dart';
+import 'package:awesome_mobile_scanner_example/widgets/buttons/toggle_flashlight_button.dart';
+import 'package:awesome_mobile_scanner_example/widgets/dialogs/barcode_format_dialog.dart';
+import 'package:awesome_mobile_scanner_example/widgets/dialogs/box_fit_dialog.dart';
+import 'package:awesome_mobile_scanner_example/widgets/dialogs/detection_speed_dialog.dart';
+import 'package:awesome_mobile_scanner_example/widgets/dialogs/detection_timeout_dialog.dart';
+import 'package:awesome_mobile_scanner_example/widgets/dialogs/resolution_dialog.dart';
+import 'package:awesome_mobile_scanner_example/widgets/scanned_barcode_label.dart';
+import 'package:awesome_mobile_scanner_example/widgets/scanner_error_widget.dart';
+import 'package:awesome_mobile_scanner_example/widgets/zoom_scale_slider_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:mobile_scanner_example/widgets/buttons/analyze_image_button.dart';
-import 'package:mobile_scanner_example/widgets/buttons/pause_button.dart';
-import 'package:mobile_scanner_example/widgets/buttons/start_stop_button.dart';
-import 'package:mobile_scanner_example/widgets/buttons/switch_camera_button.dart';
-import 'package:mobile_scanner_example/widgets/buttons/toggle_flashlight_button.dart';
-import 'package:mobile_scanner_example/widgets/dialogs/barcode_format_dialog.dart';
-import 'package:mobile_scanner_example/widgets/dialogs/box_fit_dialog.dart';
-import 'package:mobile_scanner_example/widgets/dialogs/detection_speed_dialog.dart';
-import 'package:mobile_scanner_example/widgets/dialogs/detection_timeout_dialog.dart';
-import 'package:mobile_scanner_example/widgets/dialogs/resolution_dialog.dart';
-import 'package:mobile_scanner_example/widgets/scanned_barcode_label.dart';
-import 'package:mobile_scanner_example/widgets/scanner_error_widget.dart';
-import 'package:mobile_scanner_example/widgets/zoom_scale_slider_widget.dart';
 
 enum _PopupMenuItems {
   cameraResolution,
@@ -94,9 +94,7 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
   Future<void> _showResolutionDialog() async {
     final Size? result = await showDialog<Size>(
       context: context,
-      builder:
-          (context) =>
-              ResolutionDialog(initialResolution: desiredCameraResolution),
+      builder: (context) => ResolutionDialog(initialResolution: desiredCameraResolution),
     );
 
     if (result != null) {
@@ -122,9 +120,7 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
   Future<void> _showDetectionTimeoutDialog() async {
     final int? result = await showDialog<int>(
       context: context,
-      builder:
-          (context) =>
-              DetectionTimeoutDialog(initialTimeoutMs: detectionTimeoutMs),
+      builder: (context) => DetectionTimeoutDialog(initialTimeoutMs: detectionTimeoutMs),
     );
 
     if (result != null) {
@@ -150,8 +146,7 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
   Future<void> _showBarcodeFormatDialog() async {
     final List<BarcodeFormat>? result = await showDialog<List<BarcodeFormat>>(
       context: context,
-      builder:
-          (context) => BarcodeFormatDialog(selectedFormats: selectedFormats),
+      builder: (context) => BarcodeFormatDialog(selectedFormats: selectedFormats),
     );
 
     if (result != null) {
@@ -252,14 +247,8 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
                     enabled: detectionSpeed == DetectionSpeed.normal,
                     child: Text(_PopupMenuItems.detectionTimeout.name),
                   ),
-                  PopupMenuItem(
-                    value: _PopupMenuItems.boxFit,
-                    child: Text(_PopupMenuItems.boxFit.name),
-                  ),
-                  PopupMenuItem(
-                    value: _PopupMenuItems.formats,
-                    child: Text(_PopupMenuItems.formats.name),
-                  ),
+                  PopupMenuItem(value: _PopupMenuItems.boxFit, child: Text(_PopupMenuItems.boxFit.name)),
+                  PopupMenuItem(value: _PopupMenuItems.formats, child: Text(_PopupMenuItems.formats.name)),
                   const PopupMenuDivider(),
                   if (!kIsWeb && Platform.isAndroid)
                     CheckedPopupMenuItem(
@@ -308,14 +297,9 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
                     },
                     fit: boxFit,
                   ),
-                  if (useBarcodeOverlay)
-                    BarcodeOverlay(controller: controller!, boxFit: boxFit),
+                  if (useBarcodeOverlay) BarcodeOverlay(controller: controller!, boxFit: boxFit),
                   // The scanWindow is not supported on the web.
-                  if (useScanWindow)
-                    ScanWindowOverlay(
-                      scanWindow: scanWindow,
-                      controller: controller!,
-                    ),
+                  if (useScanWindow) ScanWindowOverlay(scanWindow: scanWindow, controller: controller!),
                   if (returnImage)
                     Align(
                       alignment: Alignment.topRight,
@@ -335,19 +319,14 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
 
                               if (barcode == null) {
                                 return const Center(
-                                  child: Text(
-                                    'Your scanned barcode will appear here',
-                                    textAlign: TextAlign.center,
-                                  ),
+                                  child: Text('Your scanned barcode will appear here', textAlign: TextAlign.center),
                                 );
                               }
 
                               final Uint8List? barcodeImage = barcode.image;
 
                               if (barcodeImage == null) {
-                                return const Center(
-                                  child: Text('No image for this barcode.'),
-                                );
+                                return const Center(child: Text('No image for this barcode.'));
                               }
 
                               return Image.memory(
@@ -355,11 +334,7 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
                                 fit: BoxFit.cover,
                                 gaplessPlayback: true,
                                 errorBuilder: (context, error, stackTrace) {
-                                  return Center(
-                                    child: Text(
-                                      'Could not decode image bytes. $error',
-                                    ),
-                                  );
+                                  return Center(child: Text('Could not decode image bytes. $error'));
                                 },
                               );
                             },
@@ -376,11 +351,7 @@ class _MobileScannerAdvancedState extends State<MobileScannerAdvanced> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: ScannedBarcodeLabel(
-                              barcodes: controller!.barcodes,
-                            ),
-                          ),
+                          Expanded(child: ScannedBarcodeLabel(barcodes: controller!.barcodes)),
                           if (!kIsWeb) ZoomScaleSlider(controller: controller!),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:mobile_scanner/src/objects/credit_card.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card.dart';
 
 /// Represents a capture of one or more credit cards from a single frame.
 class CreditCardCapture {

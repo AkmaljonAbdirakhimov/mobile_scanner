@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mobile_scanner/src/enums/encryption_type.dart';
+import 'package:awesome_mobile_scanner/src/enums/encryption_type.dart';
 
 void main() {
   group('$EncryptionType tests', () {

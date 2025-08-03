@@ -1,5 +1,5 @@
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Button widget for pause function
 class PauseButton extends StatelessWidget {
@@ -20,12 +20,7 @@ class PauseButton extends StatelessWidget {
           return const SizedBox.shrink();
         }
 
-        return IconButton(
-          color: Colors.white,
-          iconSize: 32,
-          icon: const Icon(Icons.pause),
-          onPressed: _onPressed,
-        );
+        return IconButton(color: Colors.white, iconSize: 32, icon: const Icon(Icons.pause), onPressed: _onPressed);
       },
     );
   }

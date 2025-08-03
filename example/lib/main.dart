@@ -1,7 +1,7 @@
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
+import 'package:awesome_mobile_scanner_example/screens/credit_card_scanner_example.dart';
+import 'package:awesome_mobile_scanner_example/screens/mobile_scanner_advanced.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:mobile_scanner_example/screens/credit_card_scanner_example.dart';
-import 'package:mobile_scanner_example/screens/mobile_scanner_advanced.dart';
 
 void main() {
   runApp(const MaterialApp(title: 'Mobile Scanner Example', home: _ExampleHome()));
@@ -148,15 +148,6 @@ class _ExampleHome extends StatelessWidget {
                 const CreditCardScannerExample(),
                 Icons.credit_card,
               ),
-              // TODO(juliansteenbakker): Fix picklist example
-              // _buildItem(
-              //   context,
-              //   'Mobile Scanner with Crosshair',
-              //  'Example of a mobile scanner instance with a crosshair, that '
-              //       'only detects barcodes which the crosshair hits.',
-              //   const BarcodeScannerPicklist(),
-              //   Icons.list,
-              // ),
               const SizedBox(height: 20),
             ],
           ),

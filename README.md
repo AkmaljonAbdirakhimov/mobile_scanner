@@ -1,13 +1,13 @@
-# mobile_scanner
+# awesome_mobile_scanner
 
-[![Pub Version](https://img.shields.io/pub/v/mobile_scanner.svg)](https://pub.dev/packages/mobile_scanner)
-[![Pub Version Prerelease](https://img.shields.io/pub/v/mobile_scanner.svg?include_prereleases)](https://pub.dev/packages/mobile_scanner)
-[![Build Status](https://github.com/juliansteenbakker/mobile_scanner/actions/workflows/code-coverage.yml/badge.svg)](https://github.com/juliansteenbakker/mobile_scanner/actions/workflows/code-coverage.yml)
+[![Pub Version](https://img.shields.io/pub/v/awesome_mobile_scanner.svg)](https://pub.dev/packages/awesome_mobile_scanner)
+[![Pub Version Prerelease](https://img.shields.io/pub/v/awesome_mobile_scanner.svg?include_prereleases)](https://pub.dev/packages/awesome_mobile_scanner)
+[![Build Status](https://github.com/akmaljonabdirakhimov/mobile_scanner/actions/workflows/code-coverage.yml/badge.svg)](https://github.com/akmaljonabdirakhimov/mobile_scanner/actions/workflows/code-coverage.yml)
 [![Style: Very Good Analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
-[![Codecov](https://codecov.io/gh/juliansteenbakker/mobile_scanner/graph/badge.svg?token=RGE4XVOGJ5)](https://codecov.io/gh/juliansteenbakker/mobile_scanner)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/juliansteenbakker)](https://github.com/sponsors/juliansteenbakker)
+[![Codecov](https://codecov.io/gh/akmaljonabdirakhimov/mobile_scanner/graph/badge.svg?token=RGE4XVOGJ5)](https://codecov.io/gh/akmaljonabdirakhimov/mobile_scanner)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/akmaljonabdirakhimov)](https://github.com/sponsors/akmaljonabdirakhimov)
 
-A fast and lightweight Flutter plugin for scanning barcodes and QR codes using the device’s camera. It supports multiple barcode formats, real-time detection, and customization options for an optimized scanning experience on multiple platforms.
+A fast and lightweight Flutter plugin for scanning barcodes and QR codes using the device's camera. It supports multiple barcode formats, real-time detection, and customization options for an optimized scanning experience on multiple platforms.
 
 ## Features
 

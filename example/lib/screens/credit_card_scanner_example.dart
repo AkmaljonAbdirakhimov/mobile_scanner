@@ -1,5 +1,5 @@
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Example screen demonstrating credit card scanning functionality.
 ///
@@ -20,11 +20,7 @@ class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
   @override
   void initState() {
     super.initState();
-    controller = MobileScannerController(
-      detectionType: DetectionType.creditCard,
-      creditCardConfidenceThreshold: 0.7,
-      autoStart: true,
-    );
+    controller = MobileScannerController(detectionType: DetectionType.creditCard);
   }
 
   @override
@@ -76,7 +72,7 @@ class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          MobileScanner(controller: controller, onCreditCardDetect: _handleCreditCard, fit: BoxFit.cover),
+          MobileScanner(controller: controller, onCreditCardDetect: _handleCreditCard),
           // Credit card overlay - REMOVED
           // if (controller != null)
           //   CreditCardOverlay(
@@ -93,7 +89,7 @@ class _CreditCardScannerExampleState extends State<CreditCardScannerExample> {
               height: 120,
               color: const Color.fromRGBO(0, 0, 0, 0.7),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

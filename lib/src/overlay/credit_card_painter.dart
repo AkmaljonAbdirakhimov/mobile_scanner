@@ -1,8 +1,7 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/src/objects/credit_card.dart';
+import 'package:awesome_mobile_scanner/src/objects/credit_card.dart';
 
 /// A custom painter that draws credit card detection overlays.
 class CreditCardPainter extends CustomPainter {

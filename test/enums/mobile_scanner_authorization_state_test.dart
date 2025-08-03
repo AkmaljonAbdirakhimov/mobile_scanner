@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mobile_scanner/src/enums/mobile_scanner_authorization_state.dart';
+import 'package:awesome_mobile_scanner/src/enums/mobile_scanner_authorization_state.dart';
 
 void main() {
   group('$MobileScannerAuthorizationState tests', () {

@@ -1,9 +1,9 @@
-/// @docImport 'package:mobile_scanner/src/web/zxing/result.dart';
+/// @docImport 'package:awesome_mobile_scanner/src/web/zxing/result.dart';
 library;
 
 import 'dart:js_interop';
 
-import 'package:mobile_scanner/src/web/javascript_map.dart';
+import 'package:awesome_mobile_scanner/src/web/javascript_map.dart';
 import 'package:web/web.dart';
 
 /// The JS interop class for the ZXing BrowserMultiFormatReader.

@@ -1,11 +1,11 @@
 import 'dart:async';
 
+import 'package:awesome_mobile_scanner/awesome_mobile_scanner.dart';
+import 'package:awesome_mobile_scanner_example/utilities/barcode_at_center.dart';
+import 'package:awesome_mobile_scanner_example/widgets/crosshair_widget.dart';
+import 'package:awesome_mobile_scanner_example/widgets/scanner_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:mobile_scanner_example/utilities/barcode_at_center.dart';
-import 'package:mobile_scanner_example/widgets/crosshair_widget.dart';
-import 'package:mobile_scanner_example/widgets/scanner_error_widget.dart';
 
 /// This sample implements picklist functionality.
 /// The scanning can temporarily be suspended by the user by touching the
@@ -102,8 +102,7 @@ class _MobileScannerPicklistState extends State<MobileScannerPicklist> {
             children: [
               MobileScanner(
                 controller: _mobileScannerController,
-                errorBuilder:
-                    (context, error) => ScannerErrorWidget(error: error),
+                errorBuilder: (context, error) => ScannerErrorWidget(error: error),
                 fit: BoxFit.contain,
               ),
               CrosshairWidget(_scannerEnabled),

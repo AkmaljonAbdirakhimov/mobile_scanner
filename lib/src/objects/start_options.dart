@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:mobile_scanner/src/enums/barcode_format.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
-import 'package:mobile_scanner/src/enums/detection_speed.dart';
-import 'package:mobile_scanner/src/enums/detection_type.dart';
+import 'package:awesome_mobile_scanner/src/enums/barcode_format.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/detection_speed.dart';
+import 'package:awesome_mobile_scanner/src/enums/detection_type.dart';
 
 /// This class defines the different start options for the mobile scanner.
 class StartOptions {

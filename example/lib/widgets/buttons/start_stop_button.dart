@@ -1,5 +1,5 @@
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 /// Button widget for stop or start function
 class StartStopButton extends StatelessWidget {
@@ -27,12 +27,7 @@ class StartStopButton extends StatelessWidget {
           );
         }
 
-        return IconButton(
-          color: Colors.white,
-          icon: const Icon(Icons.stop),
-          iconSize: 32,
-          onPressed: _onPressedStop,
-        );
+        return IconButton(color: Colors.white, icon: const Icon(Icons.stop), iconSize: 32, onPressed: _onPressedStop);
       },
     );
   }

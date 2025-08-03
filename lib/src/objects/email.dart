@@ -1,4 +1,4 @@
-import 'package:mobile_scanner/src/enums/email_type.dart';
+import 'package:awesome_mobile_scanner/src/enums/email_type.dart';
 
 /// An email message from a 'MAILTO:' or similar QRCode type.
 class Email {

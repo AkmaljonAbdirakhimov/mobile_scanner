@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:mobile_scanner/src/enums/camera_facing.dart';
+import 'package:awesome_mobile_scanner/src/enums/camera_facing.dart';
 
 /// This widget represents a camera preview that rotates itself,
 /// based on changes in the device orientation.
@@ -75,9 +75,7 @@ final class _RotatedPreviewState extends State<RotatedPreview> {
 
   @override
   void initState() {
-    _deviceOrientationSubscription = widget.deviceOrientationStream.listen(
-      onDeviceOrientationEvent,
-    );
+    _deviceOrientationSubscription = widget.deviceOrientationStream.listen(onDeviceOrientationEvent);
     super.initState();
   }
 
@@ -110,9 +108,7 @@ final class _RotatedPreviewState extends State<RotatedPreview> {
 
     // Rotate the camera preview according to
     // https://developer.android.com/media/camera/camera2/camera-preview#orientation_calculation.
-    double rotationDegrees =
-        (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) %
-        360;
+    double rotationDegrees = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360;
 
     // Then, subtract the rotation already applied in the CameraPreview widget
     return rotationDegrees -= deviceOrientationDegrees;

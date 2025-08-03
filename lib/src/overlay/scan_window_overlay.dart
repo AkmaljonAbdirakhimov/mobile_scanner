@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/src/mobile_scanner_controller.dart';
-import 'package:mobile_scanner/src/overlay/scan_window_painter.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
+import 'package:awesome_mobile_scanner/src/overlay/scan_window_painter.dart';
 
 /// This widget represents an overlay that paints a scan window cutout.
 class ScanWindowOverlay extends StatelessWidget {
@@ -69,10 +69,7 @@ class ScanWindowOverlay extends StatelessWidget {
       valueListenable: controller,
       builder: (context, value, child) {
         // Not ready.
-        if (!value.isInitialized ||
-            !value.isRunning ||
-            value.error != null ||
-            value.size.isEmpty) {
+        if (!value.isInitialized || !value.isRunning || value.error != null || value.size.isEmpty) {
           return const SizedBox();
         }
 

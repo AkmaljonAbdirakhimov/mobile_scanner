@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:mobile_scanner/src/mobile_scanner.dart' show MobileScanner;
-import 'package:mobile_scanner/src/mobile_scanner_controller.dart';
+import 'package:awesome_mobile_scanner/src/mobile_scanner.dart' show MobileScanner;
+import 'package:awesome_mobile_scanner/src/mobile_scanner_controller.dart';
 
 /// This enum defines the different error codes for the mobile scanner.
 enum MobileScannerErrorCode {
