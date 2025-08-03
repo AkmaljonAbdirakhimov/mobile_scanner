@@ -136,6 +136,22 @@ class CreditCardUtils {
     return '$masked$lastFour';
   }
 
+  /// Format a credit card number with spaces every 4 digits for display.
+  static String formatCardNumber(String cardNumber) {
+    // Remove any existing spaces/dashes first
+    final String clean = cardNumber.replaceAll(RegExp(r'[\s-]'), '');
+
+    // Add spaces every 4 digits
+    final StringBuffer formatted = StringBuffer();
+    for (int i = 0; i < clean.length; i++) {
+      if (i > 0 && i % 4 == 0) {
+        formatted.write(' ');
+      }
+      formatted.write(clean[i]);
+    }
+    return formatted.toString();
+  }
+
   /// Validate expiry date.
   static bool isValidExpiryDate(String expiryDate) {
     final RegExpMatch? match = _expiryPattern.firstMatch(expiryDate);
